@@ -8,7 +8,7 @@ if ($usuario->msgError != "") {
     exit;
 }
 
-// $usuarios = $usuario->areaPrivada();
+$usuarios = $usuario->listarUsuarios();
 ?>
 
 <!DOCTYPE html>
@@ -68,3 +68,4 @@ if ($usuario->msgError != "") {
     </div>
 </body>
 </html>
+

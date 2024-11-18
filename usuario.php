@@ -19,7 +19,7 @@
             global $pdo;
 
 
-            // verificar se o email esta cadastrado
+            // verifica se o email ja esta cadastrado
             $sql = $pdo->prepare("SELECT id_usuario FROM usuarios WHERE email = :m");
             $sql->bindValue(":m",$email);
             $sql->execute();
@@ -61,7 +61,7 @@
             global $pdo;
             $sql = $pdo->prepare("SELECT * FROM usuarios");
             $sql->execute();
-            return $sql->fetchAll(PDO::FETCH_ASSOC); // Garante um array mesmo se a tabela estiver vazia.
+            return $sql->fetchAll(PDO::FETCH_ASSOC); 
         }
         
     }
