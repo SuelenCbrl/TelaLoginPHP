@@ -57,6 +57,13 @@
                 return false;
             }
         }
+        public function listarUsuarios() {
+            global $pdo;
+            $sql = $pdo->prepare("SELECT * FROM usuarios");
+            $sql->execute();
+            return $sql->fetchAll(PDO::FETCH_ASSOC); // Garante um array mesmo se a tabela estiver vazia.
+        }
+        
     }
 
 
