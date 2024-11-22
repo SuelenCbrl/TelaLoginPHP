@@ -63,6 +63,24 @@
             $sql->execute();
             return $sql->fetchAll(PDO::FETCH_ASSOC); 
         }
+        public function editar($id, $nome, $telefone, $email, $senha) {
+        global $pdo;
+        $sql = $pdo->prepare("UPDATE usuarios SET nome = :n, telefone = :t, email = :e, senha = :s WHERE id_usuario = :id");
+        $sql->bindValue(":n", $nome);
+        $sql->bindValue(":t", $telefone);
+        $sql->bindValue(":e", $email);
+        $sql->bindValue(":s", md5($senha));  // Senha com md5
+        $sql->bindValue(":id", $id);
+        $sql->execute();
+    }
+
+    // Função para excluir um usuário
+    public function excluir($id) {
+        global $pdo;
+        $sql = $pdo->prepare("DELETE FROM usuarios WHERE id_usuario = :id");
+        $sql->bindValue(":id", $id);
+        $sql->execute();
+    }
         
     }
 

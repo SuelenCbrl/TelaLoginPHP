@@ -44,6 +44,7 @@ $usuarios = $usuario->listarUsuarios();
                 <th>Nome</th>
                 <th>Telefone</th>
                 <th>Email</th>
+                <th>Edição</th>
             </tr>
         </thead>
         <tbody>
@@ -54,7 +55,10 @@ $usuarios = $usuario->listarUsuarios();
                         <td><?php echo $u['nome']; ?></td>
                         <td><?php echo $u['telefone']; ?></td>
                         <td><?php echo $u['email']; ?></td>
+                        <td><a href="editar.php?id=<?= $u['id_usuario'] ?>">Editar</a> |
+                            <a href="excluir.php?id=<?= $u['id_usuario'] ?>" onclick="return confirm('Tem certeza que deseja excluir este usuário?');">Excluir</a></td>
                     </tr>
+                    
                 <?php endforeach; ?>
             <?php else: ?>
                 <tr>
@@ -64,7 +68,7 @@ $usuarios = $usuario->listarUsuarios();
         </tbody>
     </table>
     <div style="text-align: center;">
-        <a href="index.php">Voltar para a página inicial</a>
+    <button><a href="index.php"Voltar</a>Voltar</button>
     </div>
 </body>
 </html>
