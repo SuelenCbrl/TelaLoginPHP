@@ -6,7 +6,7 @@
     <title>Tela Login</title>
 </head>
 <body>
-    <h2>CRUD - CREATE READ UPDATE</h2>
+    <h2>CRUD - CREATE READ UPDATE DELETE</h2>
     <h3>Tela login</h3>
     <form action="areaPrivada.php" method="post">
         <label> Usuário: </label>
