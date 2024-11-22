@@ -51,10 +51,10 @@ $usuarios = $usuario->listarUsuarios();
             <?php if (count($usuarios) > 0): ?>
                 <?php foreach ($usuarios as $u): ?>
                     <tr>
-                        <td><?php echo $u['id_usuario']; ?></td>
-                        <td><?php echo $u['nome']; ?></td>
-                        <td><?php echo $u['telefone']; ?></td>
-                        <td><?php echo $u['email']; ?></td>
+                        <td><?php echo $u['id_usuario']; ?></td><br>
+                        <td><?php echo $u['nome']; ?></td><br>
+                        <td><?php echo $u['telefone']; ?></td><br>
+                        <td><?php echo $u['email']; ?></td><br>
                         <td><a href="editar.php?id=<?= $u['id_usuario'] ?>">Editar</a> |
                             <a href="excluir.php?id=<?= $u['id_usuario'] ?>" onclick="return confirm('Tem certeza que deseja excluir este usuário?');">Excluir</a></td>
                     </tr>
